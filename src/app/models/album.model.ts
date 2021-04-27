@@ -1,3 +1,3 @@
-export class Album {
+export interface Album {
     title: string;
 }

@@ -13,12 +13,13 @@ export class ListPostsComponent implements OnInit {
   formulario: FormGroup;
   arrPost: Post[];
   constructor(private postService: PostsService) {
-    this.formulario = new FormGroup({
-      txtSearch: new FormControl('', Validators.required)
-    });
+   
   }
 
   ngOnInit() {
+    this.formulario = new FormGroup({
+      txtSearch: new FormControl('', Validators.required)
+    });
   }
 
   async onSearch() {

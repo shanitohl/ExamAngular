@@ -12,10 +12,11 @@ export class ListCommentsComponent implements OnInit {
 
   arrComment: Comment[];
   constructor(private commentService: CommentsService,private activateRoute: ActivatedRoute) {
-    this.arrComment = [];
+    
   }
 
   ngOnInit() {
+    this.arrComment = [];
     this.activateRoute.params.subscribe(async param=>{      
       this.commentService.getAllByPost(param.postId).subscribe(response => {
         this.arrComment = response.map(item => {

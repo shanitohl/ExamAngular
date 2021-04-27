@@ -14,7 +14,7 @@ export class AlbumsService {
   }
 
   getAllByUser(userId: number): Observable<Album[]> {
-    return this.httpClient.get<any>(this.baseUrl + `${userId}/albums`);
+    return this.httpClient.get<Album[]>(this.baseUrl + `${userId}/albums`);
   }
 
 }

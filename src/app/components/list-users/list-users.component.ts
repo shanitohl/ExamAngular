@@ -12,11 +12,11 @@ export class ListUsersComponent implements OnInit {
   arrUsers: User[];
 
   constructor(private userService: UsersService) {
-    this.arrUsers = [];
+    
   }
 
   async ngOnInit() {
-    //this.arrUsers = await this.userService.getAll();
+    this.arrUsers = [];  
     this.userService.getAll().subscribe(response=>{
       this.arrUsers = response.map(item=>{
         return item;
