@@ -1,0 +1,22 @@
+<h1 class="mt-4">Users</h1>
+<p>Crear un Component que liste todos los usuarios
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">User name</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of arrUsers;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.phone}}</td>
+        </tr>
+    </tbody>
+</table>

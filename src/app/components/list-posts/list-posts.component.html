@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="mt-4">Post</h1>
+    <p>Crear un Component que tenga un formulario con un input en el cual se ingrese el id del usuario y muestre sus
+        posts:
+    </p>
+
+    <form class="form-inline" [formGroup]="formulario" (ngSubmit)="onSearch()">
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="txtSearch" class="sr-only">User Id</label>
+            <input type="text" formControlName="txtSearch" class="form-control" name="txtSearch" placeholder="User Id">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+        <div class="form-group">
+            <small *ngIf="!formulario.controls.txtSearch.valid && !formulario.controls.txtSearch.untouched"
+                class="text-sm-left">Ingrese el Id del usuario</small>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of arrPost;let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.title}}</td>
+                <td>{{item.body}}</td>
+                <td><button class="form-control btn-primary" [routerLink]="[ '/post',item.id]"> view</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
